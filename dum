@@ -1,1 +1,74 @@
-aravindhakumaran
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+$("input[type='button']").click(function(){
+var radioValue = $("input[name='payment']:checked").val();
+$("#"+radioValue).submit();
+});
+});
+</script>
+</head>
+<body>
+<input type="radio" name="payment" value="single"> Single Payment<br>
+<input type="radio" name="payment" value="recurring"> Recurring Payment<br>
+<input type="button" value="Submit">
+
+<form id="single" method="post" action="https://api.ccbill.com/wap-frontflex/flexforms/570e3b40-1933-4614-831f-868ab326d4ce">
+<input type="hidden" name="clientSubacc" value="0000">
+
+<input type="hidden" name="customer_fname" value='karthika'>
+<input type="hidden" name="customer_lname" value='single'>
+<input type="hidden" name="email" value='karthikabsetec@gmail.com'>
+
+<input type="hidden" name="address1" value='2 ave street'>
+<input type="hidden" name="city" value='San diego'>
+<input type="hidden" name="state" value='TX'>
+<input type="hidden" name="zipcode" value='12345'>
+<input type="hidden" name="country" value='US'>
+
+<input type="hidden" name="initialPrice" value="07.95">
+<input type="hidden" name="initialPeriod" value="1">
+<input type="hidden" name="currencyCode" value="840">
+<input type="hidden" name="formDigest" value="df4d390ea4a211bc111136cdf5c4ee83">
+
+</form>
+ 
+
+<form id="recurring" method="post"
+action="https://api.ccbill.com/wap-frontflex/flexforms/570e3b40-1933-4614-831f-868ab326d4ce">
+<input type="hidden" name="clientAccnum" value="951936">
+<input type="hidden" name="clientSubacc" value="0000">
+
+<input type="hidden" name="customer_fname" value='karthika'>
+<input type="hidden" name="customer_lname" value='recurring'>
+<input type="hidden" name="email" value='karthikabsetec@gmail.com'>
+
+<input type="hidden" name="address1" value='2 ave street'>
+<input type="hidden" name="city" value='San diego'>
+<input type="hidden" name="state" value='TX'>
+<input type="hidden" name="zipcode" value='12345'>
+<input type="hidden" name="country" value='US'>
+
+<input type="hidden" name="initialPrice" value="9.95">
+<input type="hidden" name="initialPeriod" value="30">
+<input type="hidden" name="recurringPrice" value="9.95">
+<input type="hidden" name="recurringPeriod" value="30">
+<input type="hidden" name="numRebills" value="1"> 
+<input type="hidden" name="formDigest" value="cf9737c2dd7cc9899136aabdbc1d2101">
+<input type="hidden" name="currencyCode" value="840">
+</form>
+
+
+</body>
+</html>
+
+
+<!-- https://api.ccbill.com/wap-frontflex/flexforms/570e3b40-1933-4614-831f-868ab326d4ce?clientSubacc=0000&initialPrice=18.00&initialPeriod=5&recurringPrice=5.00&recurringPeriod=30&numRebills=1&currencyCode=840&formDigest=d97bed7382473a070de6623592eb246f
+
+https://api.ccbill.com/wap-frontflex/flexforms/570e3b40-1933-4614-831f-868ab326d4ce?clientSubacc=0000&initialPrice=18.00&initialPeriod=5&recurringPrice=5.00&recurringPeriod=30&numRebills=1&currencyCode=840&formDigest=98d06193788ea3e9a55cca397288a919 
+ <input type="hidden" name="formDigest" value="8ca86352a4b64ef2a8bc77dbef14d9ce"> 
+-->
+
